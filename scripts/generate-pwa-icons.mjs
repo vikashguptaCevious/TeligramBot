@@ -79,6 +79,11 @@ function main() {
     outFile: path.join(publicDir, 'pwa-maskable-512x512.png'),
     maskable: true,
   })
+  writePng({
+    size: 512,
+    outFile: path.join(publicDir, 'icon.png'),
+    maskable: false,
+  })
 
   // eslint-disable-next-line no-console
   console.log('PWA icons generated in /public')
