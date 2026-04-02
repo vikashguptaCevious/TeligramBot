@@ -4,6 +4,7 @@ const CACHE_NAME = 'taligram-pwa-v1'
 const APP_SHELL = [
   '/',
   '/index.html',
+  '/manifest.webmanifest',
   '/manifest.json',
   '/favicon.svg',
   '/pwa-192x192.png',
@@ -62,7 +63,8 @@ self.addEventListener('fetch', (event) => {
           url.pathname.endsWith('.css') ||
           url.pathname.endsWith('.png') ||
           url.pathname.endsWith('.svg') ||
-          url.pathname.endsWith('.json')
+          url.pathname.endsWith('.json') ||
+          url.pathname.endsWith('.webmanifest')
 
         if (isStatic && res.ok) {
           const cache = await caches.open(CACHE_NAME)
